@@ -1,5 +1,5 @@
 import React from 'react';
-import ShopkeeperNavbar from './ShopkeeperNavbar';
+import ShopkeeperNavbar from '../../components/shopkeeperComponent/ShopkeeperNavbar';
 import InteractiveDashboard from './InteractiveDashboard';
 
 function ShopDashboard() {
