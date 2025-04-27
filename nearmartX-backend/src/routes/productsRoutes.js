@@ -1,15 +1,13 @@
 const express = require('express');
-const router = express.Router();
+const router = express.Router(); 
+const { getAllProducts, getProductById } = require('../controllers/productsController');
+const authMiddleware = require('../middlewares/authMiddleware'); // Import the auth middleware
 
-// Example route to get all products
-router.get('/', (req, res) => {
-    res.send('Get all products');
-});
+// Route to get all products
+router.get('/',authMiddleware, getAllProducts);
 
 // Example route to get a specific product by ID
-router.get('/:id', (req, res) => {
-    res.send(`Get product with ID: ${req.params.id}`);
-});
+router.get('/:id', getProductById);
 
 // Example route to create a new product
 router.post('/', (req, res) => {
